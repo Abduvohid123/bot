@@ -13,7 +13,7 @@ class StartCallback
                 $data = $query->getData();
                 $messageId = $query->getMessage()->getMessageId();
 
-                $bot->call('command',['name'=>'start']);
+                $bot->sendMessage($chatId,"salom");
 
             } catch (Exception $exception) {
 
