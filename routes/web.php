@@ -10,5 +10,8 @@ Route::get('/', function () {
 
 Route::get('/telegram', function () {
     $telegram = new Api('6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw');
-    return  $telegram->getMe();
+    $telegram->sendMessage([
+       'chat_id'=>534310866,
+       'text'=>"salom"
+    ]);
 });
