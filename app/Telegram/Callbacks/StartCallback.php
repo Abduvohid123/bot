@@ -14,8 +14,7 @@ class StartCallback
                 $chatId = $query->getMessage()->getChat()->getId();
                 $data = $query->getData();
                 $messageId = $query->getMessage()->getMessageId();
-
-                $bot->sendMessage($chatId,$messageId,StartButton::get());
+                $bot->editMessageText($chatId, $messageId, "salom", "HTML", false, StartButton::get());
 
             } catch (Exception $exception) {
 
