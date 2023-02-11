@@ -20,7 +20,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
 Route::get('/telegram', function () {
     $telegram = new Api('6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw');
     $telegram->setWebhook([
-        'url'=>'http://bot.byweb.uz'
+        'url'=>'https://bot.byweb.uz'
     ]);
 
 });
