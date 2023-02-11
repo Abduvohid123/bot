@@ -24,6 +24,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
      */
     $bot = new \TelegramBot\Api\Client('6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw');
 
+
     $bot->command(
         'start',
         \App\Telegram\Commands\StartCommand::handle($bot)
@@ -35,7 +36,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
                 $chatId = $query->getMessage()->getChat()->getId();
                 $data = $query->getData();
                 $messageId = $query->getMessage()->getMessageId();
-                \App\Telegram\Callbacks\StartCallback::handle($bot);
+                \App\Telegram\Callbacks\StartCallback::handle($bot,$query);
             } catch (Exception $exception) {
 
             }
