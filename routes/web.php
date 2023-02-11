@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 
 Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function () {
+    /**
+     * @var $bot \TelegramBot\Api\Client | \TelegramBot\Api\BotApi
+     */
     $bot = new \TelegramBot\Api\Client('6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw');
 
     $bot->command(
@@ -45,6 +48,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
                 $data = $query->getData();
 
                 $messageId = $query->getMessage()->getMessageId();
+                $bot->sendMessage($chatId,"button bosildi");
             }
             catch (Exception $exception) {
 
