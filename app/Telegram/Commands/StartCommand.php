@@ -15,7 +15,8 @@ class StartCommand
             try {
                 $chatId = $message->getChat()->getId();
 
-                $bot->sendMessage($chatId, "<b>🇺🇿 Iltimos tilni tanlang!\n\n🇬🇧 Please! choose a language!\n\n🇷🇺 Пожалуйста, выберите язык!</b>", "HTML", false, null, StartButton::get());
+                $button= new StartButton();
+                $bot->sendMessage($chatId, $button->message, "HTML", false, null, $button->get());
 
 
             } catch (Exception $exception) {
