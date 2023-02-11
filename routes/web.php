@@ -15,12 +15,13 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
         'chat_id'=>534310866,
         'text'=>"salom"
     ]);
-});
+})->name('webhook');
 
 Route::get('/telegram', function () {
     $telegram = new Api('6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw');
+    $telegram->deleteWebhook();
     $telegram->setWebhook([
-        'url'=>'https://bot.byweb.uz'
+        'url'=>\route('webhook')
     ]);
 
 });
