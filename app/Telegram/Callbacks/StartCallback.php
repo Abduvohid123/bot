@@ -2,6 +2,8 @@
 
 namespace App\Telegram\Callbacks;
 
+use App\Telegram\Buttons\StartButton;
+
 class StartCallback
 {
     public static function handle($bot,$query)
@@ -13,7 +15,7 @@ class StartCallback
                 $data = $query->getData();
                 $messageId = $query->getMessage()->getMessageId();
 
-                $bot->sendMessage($chatId,"salom");
+                $bot->sendMessage($chatId,StartButton::get());
 
             } catch (Exception $exception) {
 
