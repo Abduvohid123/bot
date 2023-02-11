@@ -26,21 +26,17 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
 
     $bot->command(
         'start',
-       \App\Telegram\Commands\StartCommand::handle($bot)
+        \App\Telegram\Commands\StartCommand::handle($bot)
     );
     $bot->callbackQuery(
 
         static function (\TelegramBot\Api\Types\CallbackQuery $query) use ($bot) {
             try {
-
-
                 $chatId = $query->getMessage()->getChat()->getId();
                 $data = $query->getData();
-
                 $messageId = $query->getMessage()->getMessageId();
-                $bot->sendMessage($chatId,"button bosildi");
-            }
-            catch (Exception $exception) {
+                $bot->sendMessage($chatId, "button bosildi");
+            } catch (Exception $exception) {
 
             }
         });
@@ -60,7 +56,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
                 $text = $update->getMessage()->getText();
                 $chatId = $update->getMessage()->getChat()->getId();
 
-
+                $bot->sendMessage($chatId, strrev($text));
 
             } catch (Exception $e) {
 
