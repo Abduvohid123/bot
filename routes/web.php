@@ -37,7 +37,7 @@ Route::post('/6022814437:AAGKJ8NsTWGxmENsZ3KcnE1YqA1RZKmCurw/webhook', function 
                 $data = $query->getData();
                 $messageId = $query->getMessage()->getMessageId();
                 \App\Telegram\Callbacks\StartCallback::handle($bot,$query);
-                $bot->answerCallbackQuery($query->getId(),null,true);
+                $bot->answerCallbackQuery($query->getId(),null,false);
             } catch (Exception $exception) {
 
             }
