@@ -18,7 +18,7 @@ class StartCommand extends UserCommand
     /** @var string Usage description */
     protected $usage = '/start';
     /** @var string Version */
-    protected $version = '1.0.0';
+//    protected $version = '1.0.0';
 
     public function execute(): ServerResponse
     {
