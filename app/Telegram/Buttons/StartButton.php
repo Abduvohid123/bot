@@ -8,7 +8,7 @@ class StartButton
 
     public function __construct()
     {
-        $this->message="<b>🇺🇿 Iltimos tilni tanlang!\n\n🇬🇧 Please! choose a language!\n\n🇷🇺 Пожалуйста, выберите язык!</b>";
+        $this->message="<b>🇺🇿 Iltimos2 tilni tanlang!\n\n🇬🇧 Please! choose a language!\n\n🇷🇺 Пожалуйста, выберите язык!</b>";
     }
 
     public  function get()
